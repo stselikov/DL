@@ -14,7 +14,7 @@ from esrgan.model import Generator
 MODEL_PATH = "."
 HR_PATH = "DIV2K_valid_HR"
 
-CHECKPOINT_GEN = "src/esrgan/gen_esrgan.pth"
+CHECKPOINT_GEN = "gen_esrgan.pth"
 LR_PATH = "test_images"
 RESULT_IMAGES = "result_images"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"

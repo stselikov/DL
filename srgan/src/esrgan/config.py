@@ -26,8 +26,8 @@ DISC_TRAIN = True # Define if we train full GAN or just pre-train Generator
 
 WORK_PATH = "."
 IMAGE_PATH = "DIV2K_train_HR"
-CHECKPOINT_GEN = "src/esrgan/gen_esrgan.pth"
-CHECKPOINT_DISC = "src/esrgan/disc_esrgan.pth"
+CHECKPOINT_GEN = "gen_esrgan.pth"
+CHECKPOINT_DISC = "disc_esrgan.pth"
 TEST_IMAGES = "test_images"
 RESULT_IMAGES = "result_images"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"

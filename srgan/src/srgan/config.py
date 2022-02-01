@@ -20,8 +20,8 @@ DISC_TRAIN = True
 
 WORK_PATH = "."
 IMAGE_PATH = "DIV2K_train_HR/1"
-CHECKPOINT_GEN = "src/srgan/gen_srgan.pth"
-CHECKPOINT_DISC = "src/srgan/disc_srgan.pth"
+CHECKPOINT_GEN = "gen_srgan.pth"
+CHECKPOINT_DISC = "disc_srgan.pth"
 TEST_IMAGES = "test_images"
 RESULT_IMAGES = "result_images"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"

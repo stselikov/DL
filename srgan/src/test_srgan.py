@@ -15,7 +15,7 @@ from srgan.model import Generator
 MODEL_PATH = "."
 HR_PATH = "DIV2K_valid_HR"
 
-CHECKPOINT_GEN = "src/srgan/gen_srgan.pth"
+CHECKPOINT_GEN = "gen_srgan.pth"
 LR_PATH = "test_images"
 RESULT_IMAGES = "result_images"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"

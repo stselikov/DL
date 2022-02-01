@@ -15,7 +15,7 @@ MODEL_PATH = "."
 LR_PATH = "DIV2K_valid_LR_bicubic/X4"
 HR_PATH = "DIV2K_valid_HR"
 
-CHECKPOINT_GEN = "src/esrgan/gen_esrgan.pth"
+CHECKPOINT_GEN = "gen_esrgan.pth"
 RESULT_IMAGES = "result_images"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
