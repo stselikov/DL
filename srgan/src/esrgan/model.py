@@ -85,7 +85,7 @@ class Generator(nn.Module):
 
         self.residuals_sequence = nn.Sequential(*[RRDB(num_channels) for _ in range(num_blocks)])
 
-        self.conv_middle = nn.Conv2d(in_channels=num_channels, 
+        self.conv_midddle = nn.Conv2d(in_channels=num_channels, 
                                     out_channels=num_channels, kernel_size=3, stride=1, padding=1, bias=True)
         
         self.upsample = nn.Sequential(
@@ -102,7 +102,7 @@ class Generator(nn.Module):
     def forward(self, x):
         initial = self.conv_initial(x)
         out = self.residuals_sequence(initial)
-        out = self.conv_middle(out)
+        out = self.conv_midddle(out)
         out = torch.add(out, initial)
         out = self.upsample(out)
         out = self.conv_final(out)
