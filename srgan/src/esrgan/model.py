@@ -10,7 +10,7 @@ class Conv_Block_No_BN(nn.Module):
         super(Conv_Block_No_BN, self).__init__()
         self.conv = nn.Sequential(
             nn.Conv2d(in_channels=in_channels, out_channels=out_channels, **kwargs),
-            nn.LeakyReLU(0.2, inplace=True)
+            nn.LeakyReLU(negative_slope=0.2, inplace=True)
         )
 
     def forward(self, x):
@@ -85,7 +85,7 @@ class Generator(nn.Module):
 
         self.residuals_sequence = nn.Sequential(*[RRDB(num_channels) for _ in range(num_blocks)])
 
-        self.conv_midddle = nn.Conv2d(in_channels=num_channels, 
+        self.conv_middle = nn.Conv2d(in_channels=num_channels, 
                                     out_channels=num_channels, kernel_size=3, stride=1, padding=1, bias=True)
         
         self.upsample = nn.Sequential(
@@ -102,7 +102,7 @@ class Generator(nn.Module):
     def forward(self, x):
         initial = self.conv_initial(x)
         out = self.residuals_sequence(initial)
-        out = self.conv_midddle(out)
+        out = self.conv_middle(out)
         out = torch.add(out, initial)
         out = self.upsample(out)
         out = self.conv_final(out)
