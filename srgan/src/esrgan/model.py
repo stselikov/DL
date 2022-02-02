@@ -1,4 +1,4 @@
-# SRGAN  model
+# ESRGAN  model
 import torch
 from torch import nn
 import torch.nn.functional as F
